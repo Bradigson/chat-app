@@ -1,0 +1,43 @@
+.hamburger-menu{
+    width:35px;
+    height:30px;
+    position: fixed;
+    top:15px;
+    left:30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.navbar{
+    background:black;
+    width:30%;
+    margin-left: -461px;
+    transition: all .9s;
+}
+.change{
+    margin-left: 0;
+}
+.line{
+    width:100%;
+    height:3px;
+    background:#000;
+    transition: all .9s;
+
+}
+
+.change .line-1{
+    transform: rotateZ(-405deg) translate(-8px, 6px);
+    background: #eee;
+}
+
+.change .line-2{
+    opacity: 0;
+}
+
+.change .line-3{
+    transform: rotateZ(405deg) translate(-8px, -6px);
+    background: #eee;
+
+}
+
