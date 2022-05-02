@@ -4,10 +4,14 @@ import { NavLink } from 'react-router-dom';
 
 const Header = ()=>{
     const [menu, setMenu] = useState(false);
+    const [user, setUser] = useState(
+        localStorage.getItem('user')
+    )
 
     const handleMenu = ()=>{
         setMenu(!menu);
     }
+    const userFersLetter = user.slice(0,1).toUpperCase();
     return(
             <nav className={`${menu ? 'change' : ''}${ ' navbar' }`}>
                 <div className='hamburger-menu' onClick={handleMenu}>
@@ -22,14 +26,14 @@ const Header = ()=>{
                             <h2>User aname</h2>
                         </div>
                         <div className='user-phoro'>
-
+                            <h4>{userFersLetter}</h4>
                         </div>
                     </div>
 
                     <div className='search'>
                         <div className="input-group mb-3">
                             <span className="input-group-text text-muted" id="basic-addon1"><i className='bx bx-search-alt-2' ></i></span>
-                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
+                            <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
                         </div>
                         
                     </div>

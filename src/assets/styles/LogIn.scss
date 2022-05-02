@@ -1,0 +1,35 @@
+.login-container{
+    background:#fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    form{
+        background: #fff;
+        width:40%;
+        padding:6rem 1rem 1rem 1rem;
+        height:60vh;
+        border-radius: 1rem;
+        .img{
+            
+        }
+        span{
+            border-radius: 5rem;
+            padding-left:1.5rem;
+        }
+        input{
+            background: #eee;
+            border-radius: 0 5rem  5rem 0;
+            border-left: none;
+            line-height: 2;
+            box-shadow: none;
+        }
+
+        .btn-primary{
+            line-height: 2;
+            width: 20rem;
+            background: #001D6E;
+            border-radius: 3rem;
+        }
+    }
+}

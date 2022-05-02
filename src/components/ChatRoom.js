@@ -7,6 +7,9 @@ const dataBase = getFirestore(app);
 const ChatRoom = ()=>{
 
     const [mensaje, setMensaje] = useState('');
+    const [user, setUser] = useState(
+        localStorage.getItem('user')
+    )
     const date = new Date();
     const mes = date.getMonth() + 1;
     const fecha = date.getDay() +'/'+ mes +'/'+ date.getFullYear();
@@ -49,6 +52,7 @@ const ChatRoom = ()=>{
         getAllmensjae();
     },[])
 
+    // const userFersLetter = user.slice(0,1).toUpperCase();
 
     
     return(
@@ -57,10 +61,10 @@ const ChatRoom = ()=>{
                 {/* section 1 header */}
                 <section className='chat-room__section1'>
                     <div>
-                        <h2>User Name</h2>
+                        <h2>{user}</h2>
                         <span className='text-muted'>online</span>
                     </div>
-                    <div>
+                    <div className='text-muted'>
                         <i className='bx bxs-video'></i>
                     </div>
                 </section>
@@ -68,14 +72,14 @@ const ChatRoom = ()=>{
                 {/* section 2 message */}
                 <section className='chat-room__section2'>
                   {
-                      datos.map(m=>{
+                      datos.map((m,index)=>{
                           return(
-                              <p className='card massage'>
+                              <div className='card massage' key={index}>
                                   {m.mensaje}
                                   <div className=' hora-container'>
                                       <span className='message__hora text-muted'>{m.hora}</span>
                                   </div>
-                              </p>
+                              </div>
                           )
                       })
                   }
