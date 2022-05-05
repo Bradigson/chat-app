@@ -1,13 +1,21 @@
 import '../App.css';
-import Header from '../components/Header';
 import ChatRoom from '../components/ChatRoom';
+import {useState} from 'react';
+import {Navigate} from 'react-router-dom';
 
 function Page() {
+
+  const [user, setUser] = useState(
+    localStorage.getItem('user')
+  )
+
   return (
     <div className="container-fluid">
-        <Header/>
+ 
       
-        <ChatRoom/>
+        {
+          user ? <ChatRoom/> : <Navigate to='/'/>
+        }
     
     </div>
   );

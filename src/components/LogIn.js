@@ -1,6 +1,9 @@
 import '../assets/styles/LogIn.scss';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import app from '../firebase/Credenciales';
+import {getFirestore, addDoc, collection} from 'firebase/firestore';
+const dataBase = getFirestore(app);
 
 const LogIn = ()=>{
     const [user, setUser] = useState('');
@@ -23,6 +26,9 @@ const LogIn = ()=>{
         }else{
             navigate('chat-room')
             localStorage.setItem('user', user);
+            addDoc(collection(dataBase, 'usuarios'),{
+                user
+            })
         }
     }
     return(
