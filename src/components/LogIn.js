@@ -1,4 +1,5 @@
 import '../assets/styles/LogIn.scss';
+import '../assets/styles/responisve/LogInResponsive.scss';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import app from '../firebase/Credenciales';
@@ -37,14 +38,14 @@ const LogIn = ()=>{
                 <div className=' img'>
                     
                 </div>
-                <div class="input-group mb-3">
+                <div className="input-group mb-3">
                     <span className="input-group-text text-muted" id="basic-addon1"><i className='bx bxs-user'></i></span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" 
+                    <input type="text" className="form-control" placeholder="Username" aria-label="Username" 
                     aria-describedby="basic-addon1" value={user} onChange={handleUser}/>
                 </div>
-                <div class="input-group mb-3">
+                <div className="input-group mb-3">
                     <span className="input-group-text text-muted" id="basic-addon1"><i className='bx bxs-lock-open-alt' ></i></span>
-                    <input type="password" class="form-control" placeholder="Enter any password you want" 
+                    <input type="password" className="form-control" placeholder="Enter any password you want" 
                     aria-label="Username" aria-describedby="basic-addon1" value={password} onChange={handlePassword}/>
                 </div>
                 <div className=' text-center'>

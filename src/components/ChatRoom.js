@@ -32,6 +32,7 @@ const ChatRoom = ()=>{
                 await addDoc(collection(dataBase, 'message'),{
                 mensaje, timestap:serverTimestamp(), fecha, hora, user
             })
+           
             setMensaje('');
             dummy.current.scrollIntoView({ behavior: 'smooth'});
            }
@@ -71,6 +72,7 @@ const ChatRoom = ()=>{
                 const q = query(collectionRef, orderBy('user', 'asc'));
                 onSnapshot(q, (querySnap)=>{
                     setPeople(querySnap.docs.map((doc)=>({...doc.data(), id:doc.id})));
+                    
                 })
             }catch(err){
                 console.log(err)
